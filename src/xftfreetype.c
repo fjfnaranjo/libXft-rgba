@@ -45,7 +45,7 @@ _XftGetFile (const FcChar8 *file, int id)
 
     for (f = _XftFtFiles; f; f = f->next)
     {
-	if (!strcmp (f->file, (char *) file) && f->id == id)
+	if (!strcmp (f->file, (const char *) file) && f->id == id)
 	{
 	    ++f->ref;
 	    if (XftDebug () & XFT_DBG_REF)
@@ -54,11 +54,11 @@ _XftGetFile (const FcChar8 *file, int id)
 	    return f;
 	}
     }
-    f = malloc (sizeof (XftFtFile) + strlen ((char *) file) + 1);
+    f = malloc (sizeof (XftFtFile) + strlen ((const char *) file) + 1);
     if (!f)
 	return NULL;
 
-    XftMemAlloc (XFT_MEM_FILE, (int)(sizeof (XftFtFile) + strlen ((char *) file) + 1));
+    XftMemAlloc (XFT_MEM_FILE, (int)(sizeof (XftFtFile) + strlen ((const char *) file) + 1));
     if (XftDebug () & XFT_DBG_REF)
     	printf ("FontFile %s/%d matches new\n",
 		file, id);
@@ -68,7 +68,7 @@ _XftGetFile (const FcChar8 *file, int id)
     f->ref = 1;
 
     f->file = (char *) (f+1);
-    strcpy (f->file, (char *) file);
+    strcpy (f->file, (const char *) file);
     f->id = id;
 
     f->lock = 0;
@@ -432,7 +432,7 @@ XftFontInfoFill (Display *dpy, _Xconst FcPattern *pattern, XftFontInfo *fi)
 
     if (XftDebug() & XFT_DBG_OPEN)
 	printf ("XftFontInfoFill: %s: %d (%g pixels)\n",
-		(filename ? filename : (FcChar8 *) "<none>"), id, dsize);
+		(filename ? filename : (const FcChar8 *) "<none>"), id, dsize);
     /*
      * Get antialias value
      */
@@ -757,7 +757,7 @@ XftFontInfoHash (_Xconst XftFontInfo *fi)
 _X_EXPORT FcBool
 XftFontInfoEqual (_Xconst XftFontInfo *a, _Xconst XftFontInfo *b)
 {
-    return memcmp ((void *) a, (void *) b, sizeof (XftFontInfo)) == 0;
+    return memcmp ((const void *) a, (const void *) b, sizeof (XftFontInfo)) == 0;
 }
 
 _X_EXPORT XftFont *

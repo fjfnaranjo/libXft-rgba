@@ -131,7 +131,7 @@ XftXlfdParse (const char *xlfd_orig, FcBool ignore_scalable _X_UNUSED, FcBool co
 	return NULL;
     }
 
-    if (!FcPatternAddString (pat, XFT_XLFD, (FcChar8 *) xlfd_orig)) goto bail;
+    if (!FcPatternAddString (pat, XFT_XLFD, (const FcChar8 *) xlfd_orig)) goto bail;
 
     XftSplitStr (foundry, save);
     if (save[0] && strcmp (save, "*") != 0)

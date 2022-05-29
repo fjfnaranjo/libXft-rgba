@@ -25,7 +25,7 @@
 _X_EXPORT FcPattern
 *XftNameParse (const char *name)
 {
-    return FcNameParse ((FcChar8 *) name);
+    return FcNameParse ((const FcChar8 *) name);
 }
 
 _X_EXPORT FcBool

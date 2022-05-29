@@ -324,8 +324,8 @@ XftDrawSrcPicture (XftDraw *draw, _Xconst XftColor *color)
     {
 	if (info->colors[i].pict &&
 	    info->colors[i].screen == draw->screen &&
-	    !memcmp ((void *) &color->color,
-		     (void *) &info->colors[i].color,
+	    !memcmp ((const void *) &color->color,
+		     (const void *) &info->colors[i].color,
 		     sizeof (XRenderColor)))
 	    return info->colors[i].pict;
     }
