@@ -48,10 +48,10 @@ static struct {
     int	    free_count;
     int	    free_mem;
 } XftInUse[XFT_MEM_NUM] = {
-    { "XftDraw", 0, 0 },
-    { "XftFont", 0 ,0 },
-    { "XftFtFile", 0, 0 },
-    { "XftGlyph", 0, 0 },
+    { "XftDraw",   0, 0, 0, 0 },
+    { "XftFont",   0, 0, 0, 0 },
+    { "XftFtFile", 0, 0, 0, 0 },
+    { "XftGlyph",  0, 0, 0, 0 },
 };
 
 static int  XftAllocCount, XftAllocMem;
