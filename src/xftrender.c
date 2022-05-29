@@ -106,7 +106,7 @@ XftGlyphRender (Display		*dpy,
     for (i = 0; i < nglyphs; i++)
     {
 	wire = (Glyph) glyphs[i];
-	if (wire >= font->num_glyphs || !font->glyphs[wire])
+	if (wire >= (Glyph) font->num_glyphs || !font->glyphs[wire])
 	    wire = 0;
 	switch (width) {
 	case 1: char8[i] = (char) wire; break;
@@ -233,7 +233,7 @@ XftGlyphSpecRender (Display		    *dpy,
     {
 	g = glyphs[i].glyph;
 	/* Substitute default for non-existent glyphs */
-	if (g >= font->num_glyphs || !font->glyphs[g])
+	if (g >= (FT_UInt) font->num_glyphs || !font->glyphs[g])
 	    g = 0;
 	if (font->glyphs[g])
 	     break;
@@ -247,7 +247,7 @@ XftGlyphSpecRender (Display		    *dpy,
     {
 	g = glyphs[i].glyph;
 	/* Substitute default for non-existent glyphs */
-	if (g >= font->num_glyphs || !font->glyphs[g])
+	if (g >= (FT_UInt) font->num_glyphs || !font->glyphs[g])
 	    g = 0;
 	/*
 	 * check to see if the glyph is placed where it would
@@ -285,7 +285,7 @@ XftGlyphSpecRender (Display		    *dpy,
     {
 	g = glyphs[i].glyph;
 	/* Substitute default for non-existent glyphs */
-	if (g >= font->num_glyphs || !font->glyphs[g])
+	if (g >= (FT_UInt) font->num_glyphs || !font->glyphs[g])
 	    g = 0;
 	if ((glyph = font->glyphs[g]))
 	{
@@ -508,7 +508,7 @@ XftGlyphFontSpecRender (Display			    *dpy,
 	XftFontInt  *font = (XftFontInt *) pub;
 	g = glyphs[i].glyph;
 	/* Substitute default for non-existent glyphs */
-	if (g >= font->num_glyphs || !font->glyphs[g])
+	if (g >= (FT_UInt) font->num_glyphs || !font->glyphs[g])
 	    g = 0;
 	if (font->glyphs[g])
 	{
@@ -529,7 +529,7 @@ XftGlyphFontSpecRender (Display			    *dpy,
 	XftFontInt  *font = (XftFontInt *) pub;
 	g = glyphs[i].glyph;
 	/* Substitute default for non-existent glyphs */
-	if (g >= font->num_glyphs || !font->glyphs[g])
+	if (g >= (FT_UInt) font->num_glyphs || !font->glyphs[g])
 	    g = 0;
 	/*
 	 * check to see if the glyph is placed where it would
@@ -574,7 +574,7 @@ XftGlyphFontSpecRender (Display			    *dpy,
 
 	g = glyphs[i].glyph;
 	/* Substitute default for non-existent glyphs */
-	if (g >= font->num_glyphs || !font->glyphs[g])
+	if (g >= (FT_UInt) font->num_glyphs || !font->glyphs[g])
 	    g = 0;
 	if ((glyph = font->glyphs[g]))
 	{

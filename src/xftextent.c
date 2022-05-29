@@ -58,7 +58,7 @@ XftGlyphExtents (Display	    *dpy,
     {
 	glyph = *g++;
 	n--;
-	if (glyph < font->num_glyphs &&
+	if (glyph < (FT_UInt) font->num_glyphs &&
 	    (xftg = font->glyphs[glyph]))
 	    break;
     }
@@ -82,7 +82,7 @@ XftGlyphExtents (Display	    *dpy,
 	while (n--)
 	{
 	    glyph = *g++;
-	    if (glyph < font->num_glyphs && (xftg = font->glyphs[glyph]))
+	    if (glyph < (FT_UInt) font->num_glyphs && (xftg = font->glyphs[glyph]))
 	    {
 		left = x - xftg->metrics.x;
 		top = y - xftg->metrics.y;

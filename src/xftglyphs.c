@@ -39,7 +39,7 @@ _XftFontValidateMemory (Display *dpy _X_UNUSED, XftFont *public)
     XftGlyph	    *xftg;
 
     glyph_memory = 0;
-    for (glyphindex = 0; glyphindex < font->num_glyphs; glyphindex++)
+    for (glyphindex = 0; glyphindex < (FT_UInt) font->num_glyphs; glyphindex++)
     {
 	xftg = font->glyphs[glyphindex];
 	if (xftg)
@@ -783,7 +783,7 @@ XftFontCheckGlyph (Display	*dpy,
     XftGlyph	    *xftg;
     int		    n;
 
-    if (glyph >= font->num_glyphs)
+    if (glyph >= (FT_UInt) font->num_glyphs)
 	return FcFalse;
     xftg = font->glyphs[glyph];
     if (!xftg || (need_bitmaps && !xftg->glyph_memory))
@@ -894,7 +894,7 @@ _XftFontUncacheGlyph (Display *dpy, XftFont *pub)
 
     if (XftDebug() & XFT_DBG_CACHE)
 	_XftFontValidateMemory (dpy, pub);
-    for (glyphindex = 0; glyphindex < font->num_glyphs; glyphindex++)
+    for (glyphindex = 0; glyphindex < (FT_UInt) font->num_glyphs; glyphindex++)
     {
 	xftg = font->glyphs[glyphindex];
 	if (xftg)

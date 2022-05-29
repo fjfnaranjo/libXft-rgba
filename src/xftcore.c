@@ -1026,7 +1026,7 @@ XftGlyphCore (XftDraw		*draw,
 	while (n--)
 	{
 	    glyph = *g++;
-	    if (glyph >= font->num_glyphs || !(xftg = font->glyphs[glyph]))
+	    if (glyph >= (FT_UInt) font->num_glyphs || !(xftg = font->glyphs[glyph]))
 		xftg = _XftGlyphDefault (dpy, public);
 	    if (xftg)
 	    {
@@ -1047,7 +1047,7 @@ XftGlyphCore (XftDraw		*draw,
 	while (n--)
 	{
 	    glyph = *g++;
-	    if (glyph >= font->num_glyphs || !(xftg = font->glyphs[glyph]))
+	    if (glyph >= (FT_UInt) font->num_glyphs || !(xftg = font->glyphs[glyph]))
 		xftg = _XftGlyphDefault (dpy, public);
 	    if (xftg)
 	    {
@@ -1182,7 +1182,7 @@ XftGlyphSpecCore (XftDraw		*draw,
 	for (i = 0; i < nglyphs; i++)
 	{
 	    FT_UInt glyph = glyphs[i].glyph;
-	    if (glyph >= font->num_glyphs || !(xftg = font->glyphs[glyph]))
+	    if (glyph >= (FT_UInt) font->num_glyphs || !(xftg = font->glyphs[glyph]))
 		xftg = _XftGlyphDefault (dpy, public);
 	    if (xftg)
 	    {
@@ -1202,7 +1202,7 @@ XftGlyphSpecCore (XftDraw		*draw,
 	for (i = 0; i < nglyphs; i++)
 	{
 	    FT_UInt glyph = glyphs[i].glyph;
-	    if (glyph >= font->num_glyphs || !(xftg = font->glyphs[glyph]))
+	    if (glyph >= (FT_UInt) font->num_glyphs || !(xftg = font->glyphs[glyph]))
 		xftg = _XftGlyphDefault (dpy, public);
 	    if (xftg)
 		(*sharp) (draw, xftg, glyphs[i].x, glyphs[i].y);
@@ -1347,7 +1347,7 @@ XftGlyphFontSpecCore (XftDraw			*draw,
 	    XftSmoothGlyph  smooth = _XftSmoothGlyphFind (draw, public);
 	    FT_UInt	    glyph = glyphs[i].glyph;
 
-	    if (glyph >= font->num_glyphs || !(xftg = font->glyphs[glyph]))
+	    if (glyph >= (FT_UInt) font->num_glyphs || !(xftg = font->glyphs[glyph]))
 		xftg = _XftGlyphDefault (dpy, public);
 	    if (xftg)
 	    {
@@ -1370,7 +1370,7 @@ XftGlyphFontSpecCore (XftDraw			*draw,
 	    XftSharpGlyph	sharp = _XftSharpGlyphFind (draw, public);
 	    FT_UInt		glyph = glyphs[i].glyph;
 
-	    if (glyph >= font->num_glyphs || !(xftg = font->glyphs[glyph]))
+	    if (glyph >= (FT_UInt) font->num_glyphs || !(xftg = font->glyphs[glyph]))
 		xftg = _XftGlyphDefault (dpy, public);
 	    if (xftg)
 		(*sharp) (draw, xftg, glyphs[i].x, glyphs[i].y);
