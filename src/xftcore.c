@@ -233,7 +233,7 @@ typedef void (*XftSharpGlyph) (XftDraw	*draw,
 			       int	y);
 
 static XftSharpGlyph
-_XftSharpGlyphFind (XftDraw *draw, XftFont *public)
+_XftSharpGlyphFind (XftDraw *draw _X_UNUSED, XftFont *public)
 {
     XftFontInt *font = (XftFontInt *) public;
 
@@ -923,7 +923,7 @@ _XftGlyphDefault (Display *dpy, XftFont   *public)
     return font->glyphs[0];
 }
 
-static int XftGetImageErrorHandler (Display *dpy, XErrorEvent *error_event)
+static int XftGetImageErrorHandler (Display *dpy _X_UNUSED, XErrorEvent *error_event _X_UNUSED)
 {
     return 0;
 }

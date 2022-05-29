@@ -25,7 +25,7 @@
 _X_HIDDEN XftDisplayInfo	*_XftDisplayInfo;
 
 static int
-_XftCloseDisplay (Display *dpy, XExtCodes *codes)
+_XftCloseDisplay (Display *dpy, XExtCodes *codes _X_UNUSED)
 {
     XftDisplayInfo  *info, **prev;
 

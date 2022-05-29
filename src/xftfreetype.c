@@ -717,7 +717,7 @@ bail0:
 }
 
 static void
-XftFontInfoEmpty (Display *dpy, XftFontInfo *fi)
+XftFontInfoEmpty (Display *dpy _X_UNUSED, XftFontInfo *fi)
 {
     if (fi->file)
 	_XftReleaseFile (fi->file);
@@ -1030,7 +1030,7 @@ XftFontOpenPattern (Display *dpy, FcPattern *pattern)
 }
 
 _X_EXPORT XftFont *
-XftFontCopy (Display *dpy, XftFont *public)
+XftFontCopy (Display *dpy _X_UNUSED, XftFont *public)
 {
     XftFontInt	    *font = (XftFontInt *) public;
 

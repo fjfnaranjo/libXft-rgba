@@ -958,7 +958,7 @@ XftTextRenderUtf8 (Display	    *dpy,
 
 _X_EXPORT void
 XftTextRenderUtf16 (Display	    *dpy,
-		    int		    op,
+		    int		    op _X_UNUSED,
 		    Picture	    src,
 		    XftFont	    *pub,
 		    Picture	    dst,

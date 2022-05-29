@@ -31,7 +31,7 @@
  */
 
 static void
-_XftFontValidateMemory (Display *dpy, XftFont *public)
+_XftFontValidateMemory (Display *dpy _X_UNUSED, XftFont *public)
 {
     XftFontInt	    *font = (XftFontInt *) public;
     unsigned long   glyph_memory;
@@ -813,9 +813,9 @@ XftFontCheckGlyph (Display	*dpy,
 }
 
 _X_EXPORT FcBool
-XftCharExists (Display	    *dpy,
+XftCharExists (Display	    *dpy _X_UNUSED,
 	       XftFont	    *pub,
-	       FcChar32    ucs4)
+	       FcChar32	     ucs4)
 {
     if (pub->charset)
 	return FcCharSetHasChar (pub->charset, ucs4);

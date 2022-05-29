@@ -25,7 +25,7 @@
 static Bool _XftConfigInitialized;
 
 _X_EXPORT Bool
-XftInit (_Xconst char *config)
+XftInit (_Xconst char *config _X_UNUSED)
 {
     if (_XftConfigInitialized)
 	return True;
