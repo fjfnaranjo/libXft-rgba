@@ -94,7 +94,7 @@ XftGlyphRender (Display		*dpy,
 	size = sizeof (unsigned int);
     }
     chars = char_local;
-    if (nglyphs * size > sizeof (char_local))
+    if ((size_t) (nglyphs * size) > sizeof (char_local))
     {
 	chars = malloc ((size_t)(nglyphs * size));
 	if (!chars)

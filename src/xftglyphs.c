@@ -626,7 +626,7 @@ XftFontLoadGlyphs (Display	    *dpy,
 	 * If the glyph is relatively large (> 1% of server memory),
 	 * don't send it until necessary.
 	 */
-	if (!need_bitmaps && size > info->max_glyph_memory / 100)
+	if (!need_bitmaps && ((unsigned long) size > (info->max_glyph_memory / 100)))
 	    continue;
 
 	/*
@@ -859,7 +859,7 @@ XftCharIndex (Display	    *dpy,
 		offset = 1;
 	}
 	ent = ent + offset;
-	if (ent >= font->hash_value)
+	if (ent >= (FcChar32)font->hash_value)
 	    ent -= (FcChar32)font->hash_value;
     }
     return font->hash_table[ent].glyph;
