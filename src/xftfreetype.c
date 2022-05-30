@@ -58,7 +58,7 @@ _XftGetFile (const FcChar8 *file, int id)
     if (!f)
 	return NULL;
 
-    XftMemAlloc (XFT_MEM_FILE, (int)(sizeof (XftFtFile) + strlen ((const char *) file) + 1));
+    XftMemAlloc (XFT_MEM_FILE, sizeof (XftFtFile) + strlen ((const char *) file) + 1);
     if (XftDebug () & XFT_DBG_REF)
     	printf ("FontFile %s/%d matches new\n",
 		file, id);
@@ -776,7 +776,7 @@ XftFontOpenInfo (Display	*dpy,
     FcChar32		rehash_value;
     FcBool		antialias;
     int			max_glyph_memory;
-    int			alloc_size;
+    size_t		alloc_size;
     int			ascent, descent, height;
     int			i;
     int			num_glyphs;
@@ -882,7 +882,7 @@ XftFontOpenInfo (Display	*dpy,
     alloc_size = (sizeof (XftFontInt) +
 		  (size_t)num_glyphs * sizeof (XftGlyph *) +
 		  hash_value * sizeof (XftUcsHash));
-    font = malloc ((size_t)alloc_size);
+    font = malloc (alloc_size);
 
     if (!font)
 	goto bail2;

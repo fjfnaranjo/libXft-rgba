@@ -415,10 +415,10 @@ void
 XftMemReport (void);
 
 void
-XftMemAlloc (int kind, int size);
+XftMemAlloc (int kind, size_t size);
 
 void
-XftMemFree (int kind, int size);
+XftMemFree (int kind, size_t size);
 
 /* xftlist.c */
 FcFontSet *
