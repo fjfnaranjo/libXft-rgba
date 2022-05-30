@@ -548,6 +548,9 @@ XftDrawString16 (XftDraw	    *draw,
     FT_UInt	    *glyphs, glyphs_local[NUM_LOCAL];
     int		    i;
 
+    if (len <= 0)
+	return;
+
     if (len <= NUM_LOCAL)
 	glyphs = glyphs_local;
     else
@@ -575,6 +578,9 @@ XftDrawString32 (XftDraw	    *draw,
 {
     FT_UInt	    *glyphs, glyphs_local[NUM_LOCAL];
     int		    i;
+
+    if (len <= 0)
+	return;
 
     if (len <= NUM_LOCAL)
 	glyphs = glyphs_local;
@@ -606,6 +612,9 @@ XftDrawStringUtf8 (XftDraw	    *draw,
     int		    i;
     int		    l;
     int		    size;
+
+    if (len <= 0)
+	return;
 
     i = 0;
     glyphs = glyphs_local;
@@ -651,6 +660,9 @@ XftDrawStringUtf16 (XftDraw		*draw,
     int		    i;
     int		    l;
     int		    size;
+
+    if (len <= 0)
+	return;
 
     i = 0;
     glyphs = glyphs_local;
@@ -755,6 +767,9 @@ XftDrawCharSpec (XftDraw		*draw,
     XftGlyphSpec    *glyphs, glyphs_local[NUM_LOCAL];
     int		    i;
 
+    if (len <= 0)
+	return;
+
     if (len <= NUM_LOCAL)
 	glyphs = glyphs_local;
     else
@@ -783,6 +798,9 @@ XftDrawCharFontSpec (XftDraw			*draw,
 {
     XftGlyphFontSpec	*glyphs, glyphs_local[NUM_LOCAL];
     int			i;
+
+    if (len <= 0)
+	return;
 
     if (len <= NUM_LOCAL)
 	glyphs = glyphs_local;

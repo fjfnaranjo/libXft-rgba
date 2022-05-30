@@ -123,6 +123,9 @@ XftTextExtents8 (Display	    *dpy,
     FT_UInt	    *glyphs, glyphs_local[NUM_LOCAL];
     int		    i;
 
+    if (len <= 0)
+	return;
+
     if (len <= NUM_LOCAL)
 	glyphs = glyphs_local;
     else
@@ -151,6 +154,9 @@ XftTextExtents16 (Display	    *dpy,
     FT_UInt	    *glyphs, glyphs_local[NUM_LOCAL];
     int		    i;
 
+    if (len <= 0)
+	return;
+
     if (len <= NUM_LOCAL)
 	glyphs = glyphs_local;
     else
@@ -178,6 +184,9 @@ XftTextExtents32 (Display	    *dpy,
 {
     FT_UInt	    *glyphs, glyphs_local[NUM_LOCAL];
     int		    i;
+
+    if (len <= 0)
+	return;
 
     if (len <= NUM_LOCAL)
 	glyphs = glyphs_local;
@@ -209,6 +218,9 @@ XftTextExtentsUtf8 (Display	    *dpy,
     int		    i;
     int		    l;
     int		    size;
+
+    if (len <= 0)
+	return;
 
     i = 0;
     glyphs = glyphs_local;
@@ -253,6 +265,9 @@ XftTextExtentsUtf16 (Display		*dpy,
     int		    i;
     int		    l;
     int		    size;
+
+    if (len <= 0)
+	return;
 
     i = 0;
     glyphs = glyphs_local;

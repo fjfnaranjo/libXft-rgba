@@ -362,6 +362,9 @@ XftCharSpecRender (Display		*dpy,
     XftGlyphSpec    *glyphs, glyphs_local[NUM_LOCAL];
     int		    i;
 
+    if (len <= 0)
+	return;
+
     if (len <= NUM_LOCAL)
 	glyphs = glyphs_local;
     else
@@ -652,6 +655,9 @@ XftCharFontSpecRender (Display			*dpy,
     XftGlyphFontSpec	*glyphs, glyphs_local[NUM_LOCAL];
     int			i;
 
+    if (len <= 0)
+	return;
+
     if (len <= NUM_LOCAL)
 	glyphs = glyphs_local;
     else
@@ -689,6 +695,9 @@ XftTextRender8 (Display		*dpy,
     FT_UInt	    *glyphs, glyphs_local[NUM_LOCAL];
     int		    i;
 
+    if (len <= 0)
+	return;
+
     if (len <= NUM_LOCAL)
 	glyphs = glyphs_local;
     else
@@ -721,6 +730,9 @@ XftTextRender16 (Display	    *dpy,
     FT_UInt	    *glyphs, glyphs_local[NUM_LOCAL];
     int		    i;
 
+    if (len <= 0)
+	return;
+
     if (len <= NUM_LOCAL)
 	glyphs = glyphs_local;
     else
@@ -752,6 +764,9 @@ XftTextRender16BE (Display	    *dpy,
 {
     FT_UInt	    *glyphs, glyphs_local[NUM_LOCAL];
     int		    i;
+
+    if (len <= 0)
+	return;
 
     if (len <= NUM_LOCAL)
 	glyphs = glyphs_local;
@@ -786,6 +801,9 @@ XftTextRender16LE (Display	    *dpy,
     FT_UInt	    *glyphs, glyphs_local[NUM_LOCAL];
     int		    i;
 
+    if (len <= 0)
+	return;
+
     if (len <= NUM_LOCAL)
 	glyphs = glyphs_local;
     else
@@ -819,6 +837,9 @@ XftTextRender32 (Display	    *dpy,
     FT_UInt	    *glyphs, glyphs_local[NUM_LOCAL];
     int		    i;
 
+    if (len <= 0)
+	return;
+
     if (len <= NUM_LOCAL)
 	glyphs = glyphs_local;
     else
@@ -850,6 +871,9 @@ XftTextRender32BE (Display	    *dpy,
 {
     FT_UInt	    *glyphs, glyphs_local[NUM_LOCAL];
     int		    i;
+
+    if (len <= 0)
+	return;
 
     if (len <= NUM_LOCAL)
 	glyphs = glyphs_local;
@@ -886,6 +910,9 @@ XftTextRender32LE (Display	    *dpy,
 {
     FT_UInt	    *glyphs, glyphs_local[NUM_LOCAL];
     int		    i;
+
+    if (len <= 0)
+	return;
 
     if (len <= NUM_LOCAL)
 	glyphs = glyphs_local;
@@ -925,6 +952,9 @@ XftTextRenderUtf8 (Display	    *dpy,
     int		    i;
     int		    l;
     int		    size;
+
+    if (len <= 0)
+	return;
 
     i = 0;
     glyphs = glyphs_local;
@@ -975,6 +1005,9 @@ XftTextRenderUtf16 (Display	    *dpy,
     int		    i;
     int		    l;
     int		    size;
+
+    if (len <= 0)
+	return;
 
     i = 0;
     glyphs = glyphs_local;
