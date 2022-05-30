@@ -112,7 +112,7 @@ XftDrawBitsPerPixel (XftDraw	*draw)
 
 	    for (i = 0; i < nformats; i++)
 	    {
-		if (formats[i].depth == depth)
+		if ((unsigned) formats[i].depth == depth)
 		{
 		    draw->bits_per_pixel = (unsigned)formats[i].bits_per_pixel;
 		    break;
