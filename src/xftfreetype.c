@@ -983,7 +983,7 @@ XftFontOpenInfo (Display	*dpy,
      * Unicode hash table information
      */
     font->hash_table = (XftUcsHash *) (font->glyphs + font->num_glyphs);
-    for (i = 0; i < hash_value; i++)
+    for (i = 0; (FcChar32) i < hash_value; i++)
     {
 	font->hash_table[i].ucs4 = ((FcChar32) ~0);
 	font->hash_table[i].glyph = 0;
