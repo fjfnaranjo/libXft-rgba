@@ -232,7 +232,7 @@ XftGlyphSpecRender (Display		    *dpy,
     for (i = 0; i < nglyphs; i++)
     {
 	g = glyphs[i].glyph;
-	/* Substitute default for non-existant glyphs */
+	/* Substitute default for non-existent glyphs */
 	if (g >= font->num_glyphs || !font->glyphs[g])
 	    g = 0;
 	if (font->glyphs[g])
@@ -246,7 +246,7 @@ XftGlyphSpecRender (Display		    *dpy,
     while (++i < nglyphs)
     {
 	g = glyphs[i].glyph;
-	/* Substitute default for non-existant glyphs */
+	/* Substitute default for non-existent glyphs */
 	if (g >= font->num_glyphs || !font->glyphs[g])
 	    g = 0;
 	/*
@@ -284,7 +284,7 @@ XftGlyphSpecRender (Display		    *dpy,
     for (i = 0; i < nglyphs; i++)
     {
 	g = glyphs[i].glyph;
-	/* Substitute default for non-existant glyphs */
+	/* Substitute default for non-existent glyphs */
 	if (g >= font->num_glyphs || !font->glyphs[g])
 	    g = 0;
 	if ((glyph = font->glyphs[g]))
@@ -507,7 +507,7 @@ XftGlyphFontSpecRender (Display			    *dpy,
 	XftFont	    *pub = glyphs[i].font;
 	XftFontInt  *font = (XftFontInt *) pub;
 	g = glyphs[i].glyph;
-	/* Substitute default for non-existant glyphs */
+	/* Substitute default for non-existent glyphs */
 	if (g >= font->num_glyphs || !font->glyphs[g])
 	    g = 0;
 	if (font->glyphs[g])
@@ -528,7 +528,7 @@ XftGlyphFontSpecRender (Display			    *dpy,
 	XftFont	    *pub = glyphs[i].font;
 	XftFontInt  *font = (XftFontInt *) pub;
 	g = glyphs[i].glyph;
-	/* Substitute default for non-existant glyphs */
+	/* Substitute default for non-existent glyphs */
 	if (g >= font->num_glyphs || !font->glyphs[g])
 	    g = 0;
 	/*
@@ -573,7 +573,7 @@ XftGlyphFontSpecRender (Display			    *dpy,
 	XftFontInt  *font = (XftFontInt *) pub;
 
 	g = glyphs[i].glyph;
-	/* Substitute default for non-existant glyphs */
+	/* Substitute default for non-existent glyphs */
 	if (g >= font->num_glyphs || !font->glyphs[g])
 	    g = 0;
 	if ((glyph = font->glyphs[g]))

@@ -88,7 +88,7 @@ typedef struct _XftGlyph {
 } XftGlyph;
 
 /*
- * A hash table translates Unicode values into glyph indicies
+ * A hash table translates Unicode values into glyph indices
  */
 typedef struct _XftUcsHash {
     FcChar32	    ucs4;
